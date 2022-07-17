@@ -1,9 +1,9 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from 'react';
+import reactLogo from './assets/react.svg';
+import './App.css';
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
@@ -16,13 +16,18 @@ function App() {
           <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      <h1>Front-End React / Typescript Developer</h1>
-      <a href="https://www.linkedin.com/in/ludovic-cleuet/" target="_blank">
-         @ Linkedin Profil
-        </a>
-
+      <h1 style={{ marginBottom: 100 }}>
+        Front-End React / Typescript Developer
+      </h1>
+      <a
+        href="https://www.linkedin.com/in/ludovic-cleuet/"
+        target="_blank"
+        className="neonText linkedin__link"
+      >
+        @ Linkedin Profil
+      </a>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
