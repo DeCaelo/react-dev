@@ -19,13 +19,25 @@ function App() {
       <h1 style={{ marginBottom: 100 }}>
         Front-End React / Typescript Developer
       </h1>
-      <a
-        href="https://www.linkedin.com/in/ludovic-cleuet/"
-        target="_blank"
-        className="neonText linkedin__link"
-      >
-        @ Linkedin Profil
-      </a>
+      <div className="skills">
+        <pre>
+          <code>
+            <span className="let">let</span> skills = [ "
+            <span className="body-skills">react</span>
+            ", "<span className="body-skills">functional programming</span>", "
+            <span className="body-skills">ux/ui</span>", ];
+          </code>
+        </pre>
+      </div>
+      <div style={{ marginTop: 100 }}>
+        <a
+          href="https://www.linkedin.com/in/ludovic-cleuet/"
+          target="_blank"
+          className="neonText linkedin__link"
+        >
+          @ Linkedin Profil
+        </a>
+      </div>
     </div>
   );
 }

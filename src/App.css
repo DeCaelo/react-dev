@@ -74,3 +74,34 @@
       text-shadow: none;
   }    
 }
+
+/* .App {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1.53846vw;
+  background-color: #fff;
+  position: relative;
+} */
+
+
+.skills {
+  text-align: left;
+  display: inline-block;
+  color: #d3d0c8;
+  background-color: #2d2d2d;
+  border-radius: 5px;
+  padding: 25px 35px;
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+
+.let {
+  color: #c9c;
+}
+
+.body-skills {
+  color: #9c9;
+}
