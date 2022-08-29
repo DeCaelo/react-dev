@@ -1,10 +1,13 @@
-import reactLogo from "./assets/react.svg";
-import "./App.css";
-import { Header } from "./components/Header";
+import reactLogo from './assets/react.svg';
+import './App.css';
+
+import GlobalStyle from './styles/global';
+import { Header } from './components/Header';
 
 function App() {
   return (
     <>
+      <GlobalStyle />
       <Header />
       <div className="App">
         <h1>Ludovic Cleuet</h1>
@@ -24,8 +27,8 @@ function App() {
             <code>
               <span className="let">let</span> skills = [ "
               <span className="body-skills">react</span>
-              ", "<span className="body-skills">functional programming</span>",
-              "<span className="body-skills">ux/ui</span>" ];
+              ", "<span className="body-skills">functional programming</span>
+              ", "<span className="body-skills">ux/ui</span>" ];
             </code>
           </pre>
         </div>

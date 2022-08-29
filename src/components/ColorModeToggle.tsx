@@ -1,4 +1,4 @@
-import { MouseEvent, useContext } from 'react';
+import { useContext } from 'react';
 import { ThemeContext } from '../context/theme-context';
 import styled from 'styled-components';
 import { colors } from '../constants/Colors';
@@ -22,12 +22,15 @@ const ColorModeToggleButton = styled.button`
   &:hover,
   &:focus {
     opacity: 1;
+    outline: none;
   }
 `;
 
 const ColorModeToggle = () => {
   const { state, dispatch } = useContext(ThemeContext);
-  const isDark = state.value === true;
+  console.log({ state });
+  //const isDark = state.value === 'dark';
+  const isDark = 'dark';
 
   const ColorModeToggleIcon = styled.div`
     position: relative;
@@ -78,11 +81,11 @@ const ColorModeToggle = () => {
         isDark
           ? dispatch({
               type: 'LIGHTMODE',
-              payload: false,
+              payload: 'light',
             })
           : dispatch({
               type: 'DARKMODE',
-              payload: true,
+              payload: 'dark',
             })
       }
       type="button"
