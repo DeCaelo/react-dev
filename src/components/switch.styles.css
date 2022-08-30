@@ -2,8 +2,8 @@
   box-sizing: initial;
   display: block;
   outline: 0;
-  width: 8em;
-  height: 4em;
+  width: 4em;
+  height: 2em;
   position: relative;
   cursor: pointer;
   user-select: none;
