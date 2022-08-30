@@ -1,14 +1,52 @@
 import reactLogo from './assets/react.svg';
-import './App.css';
-
-import GlobalStyle from './styles/global';
-import { Header } from './components/Header';
+import { Toggle } from './components/Toggle';
+import { useState } from 'react';
+import { ToggleAction, ToggleState } from './hooks/useToggle';
+import { useTheme } from './hooks/useTheme';
 
 function App() {
+  const [bothOn, setBothOn] = useState(false);
+  const [timesClicked, setTimesClicked] = useState(0);
+  const [theme, handleChange] = useTheme('dark');
+
+  function handleToggleChange(state: ToggleState, action: ToggleAction) {
+    if (action.type === 'toggle' && timesClicked > 4) {
+      return;
+    }
+    setBothOn(state.on);
+    setTimesClicked((c) => c + 1);
+    handleChange(theme);
+  }
+
+  function handleResetClick() {
+    setBothOn(false);
+    setTimesClicked(0);
+    handleChange(theme === 'dark');
+  }
+
   return (
     <>
-      <GlobalStyle />
-      <Header />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+        }}
+      >
+        <div>
+          <Toggle on={bothOn} onChange={handleToggleChange} />
+        </div>
+        {timesClicked > 4 ? (
+          <div data-testid="notice">Houlala calme toi!!!</div>
+        ) : (
+          <div data-testid="click-count">
+            {timesClicked === 1 || timesClicked === 3 ? '🌞' : '🌚'}
+          </div>
+        )}
+        {timesClicked > 4 ? (
+          <button onClick={handleResetClick}>Reset</button>
+        ) : null}
+      </div>
       <div className="App">
         <h1>Ludovic Cleuet</h1>
         <div>
