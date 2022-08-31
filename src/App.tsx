@@ -63,10 +63,12 @@ function App() {
         <div className="skills">
           <pre>
             <code>
-              <span className="let">let</span> skills = [ "
-              <span className="body-skills">react</span>
-              ", "<span className="body-skills">functional programming</span>
-              ", "<span className="body-skills">ux/ui</span>" ];
+              <span className="let">let</span> skills{' '}
+              <span className="let">=</span> <span className="crochet">[</span>{' '}
+              '<span className="body-skills">react</span>
+              ', '<span className="body-skills">functional programming</span>
+              ', '<span className="body-skills">ux/ui</span>'{' '}
+              <span className="crochet">]</span>;
             </code>
           </pre>
         </div>

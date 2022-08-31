@@ -107,7 +107,7 @@ body{
   text-align: left;
   display: inline-block;
   color: #d3d0c8;
-  background-color: #2d2d2d;
+  background-color: #122d42;
   border-radius: 5px;
   padding: 25px 35px;
   font-size: 18px;
@@ -115,9 +115,13 @@ body{
 }
 
 .let {
-  color: #c9c;
+  color: #c792ea;
 }
 
 .body-skills {
-  color: #9c9;
+  color: #ecc48d;
+}
+
+.crochet {
+  color: #5ca7e4;
 }
