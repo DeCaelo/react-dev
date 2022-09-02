@@ -58,7 +58,7 @@ function App() {
           </a>
         </div>
         <h1 style={{ marginBottom: 100 }}>
-          Front-End React / Typescript Developer
+          FullStack React / TypeScript / Node / Ruby On Rails Developer
         </h1>
         <div className="skills">
           <pre>
