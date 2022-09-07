@@ -3,6 +3,7 @@ import { Toggle } from './components/Toggle';
 import { useState } from 'react';
 import { ToggleAction, ToggleState } from './hooks/useToggle';
 import { useTheme } from './hooks/useTheme';
+import Head from './components/Head';
 
 function App() {
   const [bothOn, setBothOn] = useState(false);
@@ -24,8 +25,15 @@ function App() {
     handleChange(theme === 'dark');
   }
 
+  const title = 'Développeur React / Typescript';
+  const image = 'image';
+  const url = 'https://ludovic-cleuet.netlify.app/';
+  const description =
+    'Bonjour à vous 👋, si vous cherchez un développeur React Typescript en freelance je suis votre homme.';
+
   return (
     <>
+      <Head title={title} image={image} url={url} description={description} />
       <div
         style={{
           display: 'flex',
