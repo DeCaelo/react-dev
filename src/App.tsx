@@ -57,9 +57,7 @@ function App() {
             <img src={reactLogo} className="logo react" alt="React logo" />
           </a>
         </div>
-        <h1 style={{ marginBottom: 100 }}>
-          FullStack React / TypeScript / Node / Ruby On Rails Developer
-        </h1>
+        <h1 style={{ marginBottom: 100 }}>React / TypeScript Developer</h1>
         <div className="skills">
           <pre>
             <code>
