@@ -20,6 +20,14 @@ const Starfield: React.FC<any> = ({ speed }) => {
           height={height}
           speed={shouldReduceMotion ? 0 : speed}
           noBackground
+          count={1200}
+          clear={true}
+          starRatio={200}
+          starSize={0.7}
+          starStyle={'white'}
+          starShape={'round'}
+          bgStyle={'yellow'}
+          className={'classname'}
         />
       )}
     </div>
