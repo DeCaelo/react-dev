@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ToggleAction, ToggleState } from './hooks/useToggle';
 import { useTheme } from './hooks/useTheme';
 import Head from './components/Head';
+import Starfield from './components/starfield';
 
 function App() {
   const [bothOn, setBothOn] = useState(false);
@@ -88,6 +89,7 @@ function App() {
           </a>
         </div>
       </div>
+      <Starfield />
     </>
   );
 }

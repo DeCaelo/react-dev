@@ -125,3 +125,15 @@ body{
 .crochet {
   color: #5ca7e4;
 }
+
+.starfield {
+  position: fixed;
+  left: 0; 
+  top: 0; 
+  z-index:10;  
+  overflow: hidden;  
+  width: 100vw; 
+  height: 100vh; 
+  pointer-events: none; 
+  user-select:none;
+}
