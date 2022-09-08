@@ -1,6 +1,6 @@
 /* https://github.com/Franklin361/dark-light-app */
 
-@import url('./styles/var.css');
+@import url("./styles/var.css");
 
 #root {
   max-width: 1280px;
@@ -9,16 +9,16 @@
   text-align: center;
 }
 
-body{
+body {
   font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
   font-weight: 600;
   background-color: var(--background);
   color: var(--text-primary);
-  transition: all .5s ease-in-out;
+  transition: all 0.5s ease-in-out;
 }
 
 /* CONTAINER MAIN */
-.container-main{
+.container-main {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -80,28 +80,22 @@ body{
 
 /* Flickering animation */
 @keyframes flicker {
-    
-  0%, 22%, 25%, 53%, 57%, 100% {
-
-      text-shadow:
-      0 0 4px #fff,
-      0 0 11px #fff,
-      0 0 19px #fff,
-      0 0 40px #0fa,
-      0 0 80px #0fa,
-      0 0 90px #0fa,
-      0 0 100px #0fa,
-      0 0 150px #0fa;
-  
+  0%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px #0fa,
+      0 0 80px #0fa, 0 0 90px #0fa, 0 0 100px #0fa, 0 0 150px #0fa;
   }
-  
-  20%, 24%, 55% {        
-      text-shadow: none;
-  }    
+
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
 }
-
-
-
 
 .skills {
   text-align: left;
@@ -128,12 +122,22 @@ body{
 
 .starfield {
   position: fixed;
-  left: 0; 
-  top: 0; 
-  z-index:10;  
-  overflow: hidden;  
-  width: 100vw; 
-  height: 100vh; 
-  pointer-events: none; 
-  user-select:none;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  user-select: none;
+}
+
+.motion-div {
+  background: #ffe082;
+  width: 100vw;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: inline-block;
+  height: 1px;
 }

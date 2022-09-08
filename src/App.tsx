@@ -1,18 +1,21 @@
-import reactLogo from './assets/react.svg';
-import { Toggle } from './components/Toggle';
-import { useState } from 'react';
-import { ToggleAction, ToggleState } from './hooks/useToggle';
-import { useTheme } from './hooks/useTheme';
-import Head from './components/Head';
-import Starfield from './components/starfield';
+import reactLogo from "./assets/react.svg";
+import { Toggle } from "./components/Toggle";
+import { useState } from "react";
+import { ToggleAction, ToggleState } from "./hooks/useToggle";
+import { useTheme } from "./hooks/useTheme";
+import Head from "./components/Head";
+import Starfield from "./components/starfield";
+import { motion, useReducedMotion } from "framer-motion";
 
 function App() {
   const [bothOn, setBothOn] = useState(false);
   const [timesClicked, setTimesClicked] = useState(0);
-  const [theme, handleChange] = useTheme('dark');
+  const [theme, handleChange] = useTheme("dark");
+  const [starfieldSpeed, setStarfieldSpeed] = useState(0.5);
+  const shouldReduceMotion = useReducedMotion();
 
   function handleToggleChange(state: ToggleState, action: ToggleAction) {
-    if (action.type === 'toggle' && timesClicked > 4) {
+    if (action.type === "toggle" && timesClicked > 4) {
       return;
     }
     setBothOn(state.on);
@@ -23,23 +26,23 @@ function App() {
   function handleResetClick() {
     setBothOn(false);
     setTimesClicked(0);
-    handleChange(theme === 'dark');
+    handleChange(theme === "dark");
   }
 
-  const title = 'Développeur React / Typescript';
-  const image = 'image';
-  const url = 'https://ludovic-cleuet.netlify.app/';
+  const title = "Développeur React / Typescript";
+  const image = "image";
+  const url = "https://ludovic-cleuet.netlify.app/";
   const description =
-    'Bonjour à vous 👋, si vous cherchez un développeur React Typescript en freelance je suis votre homme.';
+    "Bonjour à vous 👋, si vous cherchez un développeur React Typescript en freelance je suis votre homme.";
 
   return (
     <>
       <Head title={title} image={image} url={url} description={description} />
       <div
         style={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         }}
       >
         <div>
@@ -49,7 +52,7 @@ function App() {
           <div data-testid="notice">Houlala calme toi!!!</div>
         ) : (
           <div data-testid="click-count">
-            {timesClicked === 1 || timesClicked === 3 ? '🌞' : '🌚'}
+            {timesClicked === 1 || timesClicked === 3 ? "🌞" : "🌚"}
           </div>
         )}
         {timesClicked > 4 ? (
@@ -66,15 +69,29 @@ function App() {
             <img src={reactLogo} className="logo react" alt="React logo" />
           </a>
         </div>
-        <h1 style={{ marginBottom: 100 }}>React / TypeScript Developer</h1>
+        <h1 style={{ marginBottom: 100 }}>
+          <motion.span style={{ position: "relative" }}>
+            React / TypeScript Developer
+            <motion.div
+              animate={shouldReduceMotion ? {} : { width: ["0%", "100%"] }}
+              transition={{
+                delay: 0.5,
+                type: "spring",
+                duration: 1,
+              }}
+              initial={{ width: shouldReduceMotion ? "100%" : "0%" }}
+              className="motion-div"
+            />
+          </motion.span>
+        </h1>
         <div className="skills">
           <pre>
             <code>
-              <span className="let">let</span> skills{' '}
-              <span className="let">=</span> <span className="crochet">[</span>{' '}
+              <span className="let">let</span> skills{" "}
+              <span className="let">=</span> <span className="crochet">[</span>{" "}
               '<span className="body-skills">react</span>
               ', '<span className="body-skills">functional programming</span>
-              ', '<span className="body-skills">ux/ui</span>'{' '}
+              ', '<span className="body-skills">ux/ui</span>'{" "}
               <span className="crochet">]</span>;
             </code>
           </pre>
@@ -89,7 +106,7 @@ function App() {
           </a>
         </div>
       </div>
-      <Starfield />
+      <Starfield speed={starfieldSpeed} />
     </>
   );
 }

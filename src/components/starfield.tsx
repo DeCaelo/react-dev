@@ -1,7 +1,7 @@
-import React from 'react';
-import { StarField } from './ReactStarField';
-import { useWindowSize } from 'react-use';
-import { useReducedMotion } from 'framer-motion';
+import React from "react";
+import { StarField } from "./ReactStarField";
+import { useWindowSize } from "react-use";
+import { useReducedMotion } from "framer-motion";
 
 const Starfield: React.FC<any> = ({ speed }) => {
   const { width, height } = useWindowSize();
@@ -22,12 +22,12 @@ const Starfield: React.FC<any> = ({ speed }) => {
           noBackground
           count={1200}
           clear={true}
-          starRatio={200}
-          starSize={0.7}
-          starStyle={'white'}
-          starShape={'round'}
-          bgStyle={'yellow'}
-          className={'classname'}
+          starRatio={100}
+          starSize={1}
+          starStyle={"white"}
+          starShape={"round"}
+          bgStyle={"yellow"}
+          className={"classname"}
         />
       )}
     </div>
