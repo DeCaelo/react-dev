@@ -5,36 +5,36 @@ import { createStarsState, StarFieldState } from './StarState';
 
 interface Props {
   // Width is passed through to the html canvas element
-  width?: number;
+  width: number;
   // Height is passed through to the html canvas element
-  height?: number;
+  height: number;
   // To total number of stars created for the animation
-  count?: number;
+  count: number;
   // The speed of travel through the Star Field
-  speed?: number;
+  speed: number;
   // The frames per second of the animation draw calls
-  fps?: number;
+  fps: number;
   // Clear the canvas on each draw call,
   // when false each draw call remains on the canvas and overlapped by the next
-  clear?: boolean;
+  clear: boolean;
   // The ratio used to determine the size of the entire Star Field
-  starRatio?: number;
+  starRatio: number;
   // The size of the stroke used for drawing each star
-  starSize?: number;
+  starSize: number;
   // The canvas [strokeStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/strokeStyle)
   // used for drawing each star
   // Also valid, a function that returns the strokeStyle from being invoked,
   // each draw call for special effects like random color
-  starStyle?: ColorFunction | string;
+  starStyle: ColorFunction | string;
   // The canvas [lineCap](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/lineCap)
   // used for drawing each star
-  starShape?: 'butt' | 'round' | 'square';
+  starShape: 'butt' | 'round' | 'square';
   // The canvas [fillStyle](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/fillStyle)
   // used for drawing the background of the canvas
-  bgStyle?: string;
+  bgStyle: string;
   // A flag to set no background of fillStyle of the canvas
-  noBackground?: boolean;
-  className?: string;
+  noBackground: boolean;
+  className: string;
 }
 
 type ColorFunction = () => string;

@@ -12,7 +12,7 @@ export type DrawState = {
   speed: number;
   starRatio: number;
   starSize: number;
-  strokeStyle: ColorFunction | string;
+  strokeStyle?: ColorFunction | string;
   bgStyle: string;
   clear: boolean;
   noBackground: boolean;
