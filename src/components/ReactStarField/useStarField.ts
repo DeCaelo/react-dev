@@ -9,7 +9,7 @@ export interface Options {
   starSize: number;
   width: number;
   height: number;
-  starStyle: ColorFunction | string;
+  starStyle?: ColorFunction | string;
   clear: boolean;
   starShape: 'butt' | 'round' | 'square';
   bgStyle: string;
@@ -44,15 +44,21 @@ export function useStarField(
   }
 
   useEffect(() => {
-    const context: CanvasRenderingContext2D =
-      canvasRef.current?.getContext('2d');
+    const context = canvasRef.current?.getContext('2d');
     const starLineWidthRatio = 1 / initialState.z;
     const { speed, starRatio, starSize } = options;
 
-    if (typeof options.starStyle === 'string') {
+    if (
+      typeof options.starStyle === 'string' &&
+      context !== null &&
+      context !== undefined
+    ) {
       context.strokeStyle = options.starStyle;
     }
-    context.lineCap = options.starShape;
+
+    if (typeof context?.lineCap === 'string') {
+      context.lineCap = options.starShape;
+    }
 
     let animationFrameId: any;
 

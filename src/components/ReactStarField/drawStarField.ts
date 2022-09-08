@@ -1,7 +1,7 @@
 import { ColorFunction, StarState } from './StarState';
 
 export type DrawState = {
-  context: CanvasRenderingContext2D;
+  context: CanvasRenderingContext2D | null | undefined;
   stars: StarState[];
   width: number;
   height: number;
@@ -35,10 +35,10 @@ export function drawStarField({
   clear,
   noBackground,
 }: DrawState) {
-  if (clear) {
+  if (clear && context !== null && context !== undefined) {
     context.clearRect(0, 0, width, height);
 
-    if (!noBackground) {
+    if (!noBackground && context !== null && context !== undefined) {
       context.fillStyle = bgStyle;
       context.fillRect(0, 0, width, height);
     }
@@ -47,7 +47,11 @@ export function drawStarField({
   let drawStarStep = false;
 
   for (let i = 0; i < stars.length; i++) {
-    if (typeof strokeStyle === 'function') {
+    if (
+      typeof strokeStyle === 'function' &&
+      context !== null &&
+      context !== undefined
+    ) {
       context.strokeStyle = strokeStyle();
     }
 
@@ -78,7 +82,7 @@ export function drawStarField({
       currentY > 0 &&
       currentY < height;
 
-    if (drawStarStep) {
+    if (drawStarStep && context !== null && context !== undefined) {
       context.beginPath();
       context.lineWidth = (1 - starLineWidthRatio * star.z) * starSize;
       context.moveTo(currentX, currentY);
