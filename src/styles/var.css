@@ -6,6 +6,8 @@
   --accent-hover: #cea315; 
   --border: #1f1e1e;
   --shadow: 7px 15px 13px -4px #00000056;
+  --link-color: #454442;
+  --text-decoration-color: rgba(0,0%,100%,.3);
 }
 
 [data-theme='dark'] {
@@ -16,4 +18,6 @@
   --accent-hover: #5b4cbe; 
   --border: #696969;
   --shadow: 7px 15px 13px -4px #ffffff1b;
+  --link-color: #ffe082;
+  --text-decoration-color: hsla(0,0%,100%,.3);
 }
